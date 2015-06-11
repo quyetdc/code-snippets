@@ -1,0 +1,44 @@
+#push-menu-content{
+    border: solid 1px #333;
+    height: 400px;
+    margin-top: 50px;
+    overflow: hidden;
+    display: none;;
+    float: left;
+    width: 100%;
+    background-color: #00979D;
+}
+
+#push-menu-sidebar{
+    width: 25%;
+    height: 100%;
+    background-color: #39b3d7;
+    float: left;
+}
+
+#push-menu-body{
+    width: 75%;
+    height: 400px;
+    float: left;
+}
+
+#menu-control-btn{
+    position: relative;
+    margin-left: 92%;
+    padding: 10px;
+    margin-top: 186px;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.option-active{
+    color: #39b3d7;
+}
+
+/*#snippet-content{*/
+    /*height: 500px;*/
+    /*background: transparent;*/
+    /*float: left;*/
+    /*width: 100%;*/
+/*}*/
