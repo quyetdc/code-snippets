@@ -1,0 +1,23 @@
+#add-item-content{
+    height: 400px;
+    margin-top: 50px;
+    overflow: hidden;
+    display: none;;
+    float: left;
+    width: 100%;
+    background-color: #00979D;
+}
+
+#list-of-tasks ol li{
+    margin: 20px;
+}
+
+#list-of-tasks{
+    height: 300px;
+    overflow: auto;
+}
+
+input#add-item-input{
+    border: none !important;
+    box-shadow: 0px 0px 5px #fff;
+}

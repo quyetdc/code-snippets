@@ -9,12 +9,15 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/sidebar.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/add-item.css" media="screen">
+
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/push-menu.css" media="screen">
 
     <script src="javascripts/jquery-2.1.4.min.js"></script>
     <script src="javascripts/main.js"></script>
+    <script src="javascripts/add-item.js"></script>
+    <script src="javascripts/push-menu.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.js"></script>
   </head>
   <body>
@@ -30,22 +33,22 @@
     </div>
 
     <div class="col-md-10 col-md-offset-1" id="options-table">
-        <div class="col-md-3 snippet-option text-center" onclick="showPushMenu()" id="push-menu-option">
+        <div class="col-md-3 col-xs-6 snippet-option text-center" onclick="showPushMenu()" id="push-menu-option">
             <p class="glyphicon glyphicon-th-list" style="font-size: 30px;"></p>
             <h4>Push menu</h4>
         </div>
 
-        <div class="col-md-3 snippet-option text-center">
+        <div class="col-md-3 col-xs-6 snippet-option text-center" onclick="showAddItem()" id="add-item-option">
             <p class="glyphicon glyphicon-th-list" style="font-size: 30px;"></p>
             <h4>Add Item</h4>
         </div>
 
-        <div class="col-md-3 snippet-option text-center">
+        <div class="col-md-3 col-xs-6 snippet-option text-center">
             <p class="glyphicon glyphicon-th-list" style="font-size: 30px;"></p>
             <h4>Choose Article</h4>
         </div>
 
-        <div class="col-md-3 snippet-option text-center">
+        <div class="col-md-3 col-xs-6 snippet-option text-center">
             <p class="glyphicon glyphicon-th-list" style="font-size: 30px;"></p>
             <h4>Flip Board</h4>
         </div>
@@ -61,23 +64,47 @@
         <!--</div>-->
     </div>
 
-    <div id="snippet-content">
-        <!-- PUSH MENU -->
-        <div class="col-md-12">
-            <div class="col-md-8 col-md-offset-2">
-                <div id="push-menu-content">
-                    <div id="push-menu-sidebar">
-                        <span id="menu-control-btn" class="glyphicon glyphicon-arrow-left" onclick="pushMenuSidebar()"></span>
-                    </div>
 
-                    <div id="push-menu-body">
+    <!-- PUSH MENU -->
+    <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-2">
+            <div id="push-menu-content" class="snippet-content">
+                <div id="push-menu-sidebar">
+                    <span id="menu-control-btn" class="glyphicon glyphicon-arrow-left" onclick="pushMenuSidebar()"></span>
+                </div>
 
-                    </div>
+                <div id="push-menu-body">
+
                 </div>
             </div>
         </div>
-        <!-- PUSH MENU END -->
     </div>
+    <!-- PUSH MENU END -->
+
+
+    <!-- ADD ITEM MENU -->
+    <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-2">
+            <div id="add-item-content" class="snippet-content">
+                <div class="col-md-6">
+                    <label style="color: #fff; margin: 50px 50px 30px 50px;" class="col-md-offset-1"> Enter new task </label>
+                    <div style="margin: 0px 50px;">
+                        <input type="text" id="add-item-input"/>
+                    </div>
+                    <div style="margin: 50px;" >
+                        <button class="btn btn-default" onclick="addItemBtnClicked()">Add Task</button>
+                    </div>
+                </div>
+
+                <div class="col-md-6" style="color: #fff; margin-top: 50px" id="list-of-tasks">
+                    <ol>
+
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ADD ITEM END -->
 
     <div style="height: 80px; width: 100%; background: transparent; float: left"></div>
   </body>
