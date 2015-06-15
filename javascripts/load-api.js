@@ -28,7 +28,12 @@ function loadApiItem(){
         },
         success: function(data){
             userData = data['users'];
-            for (var i = 0; i < 15; i ++){
+            var length = userData.length;
+            if (length > 15){
+                length = 15
+            }
+
+            for (var i = 0; i < length; i ++){
                 $("#load-api table").append('<tr id="tr-' + userData[i].id + '">' +
                                                     '<td>' +  userData[i].id  + '</td>' +
                                                     '<td>' +  userData[i].birth_year  + '</td>' +
