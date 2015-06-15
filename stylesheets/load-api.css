@@ -5,3 +5,10 @@
     display: none;
     width: 100%;
 }
+
+#search-text-input{
+    width: 250px;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}

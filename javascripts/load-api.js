@@ -1,3 +1,5 @@
+var userData;
+
 function loadApiItem(){
     $('html, body').animate({
         scrollTop: $("#btn-table-options").offset().top
@@ -25,15 +27,14 @@ function loadApiItem(){
             format: "json"
         },
         success: function(data){
-            data = data['users'];
-            console.log(data);
+            userData = data['users'];
             for (var i = 0; i < 15; i ++){
-                $("#load-api table").append('<tr>' +
-                                                    '<td>' +  data[i].id  + '</td>' +
-                                                    '<td>' +  data[i].birth_year  + '</td>' +
-                                                    '<td>' +  data[i].color  + '</td>' +
-                                                    '<td>' +  data[i].height  + '</td>' +
-                                                    '<td>' +  data[i].weight + '</td>' +
+                $("#load-api table").append('<tr id="tr-' + userData[i].id + '">' +
+                                                    '<td>' +  userData[i].id  + '</td>' +
+                                                    '<td>' +  userData[i].birth_year  + '</td>' +
+                                                    '<td>' +  userData[i].color  + '</td>' +
+                                                    '<td>' +  userData[i].height  + '</td>' +
+                                                    '<td>' +  userData[i].weight + '</td>' +
                                             '</tr>')
             }
         },
@@ -41,4 +42,28 @@ function loadApiItem(){
 
         }
     });
+}
+
+function searchApiItem(){
+    var textSearch = $("#search-text-input").val();
+
+    if (textSearch){
+
+        for (var i = 0; i < userData.length; i ++){
+            if (userData[i].birth_year != textSearch){
+                $("#tr-" + userData[i].id).hide();
+            } else {
+                $("#tr-" + userData[i].id).show();
+            }
+        }
+
+    }
+
+}
+
+function refreshTable(){
+    for (var i = 0; i < userData.length; i ++){
+        $("#tr-" + userData[i].id).show();
+        $("#search-text-input").val('');
+    }
 }

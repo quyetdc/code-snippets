@@ -112,6 +112,13 @@
     <div class="col-md-12">
         <div class="col-md-8 col-md-offset-2">
             <div id="load-api" class="snippet-content">
+                <div id="load-api-search-form">
+                    <h4>Search by birth year</h4>
+                    <input type="text" id="search-text-input" class="form-control"/>
+                    <button class="btn bg-primary" onclick="searchApiItem()">Search</button>
+                    <button class="btn-success btn" onclick="refreshTable()"> Refresh</button>
+                </div>
+
                 <table class="table table-striped">
                     <thead>
                         <th>ID</th>
