@@ -16,7 +16,7 @@ function loadApiItem(){
 
     $.ajax({
         type: "GET",
-        url: "http://localhost:3000/users.js",
+        url: "http://loadcsv.herokuapp.com/users.js",
         crossDomain: true,
         xhrFields: {
             withCredentials: true
