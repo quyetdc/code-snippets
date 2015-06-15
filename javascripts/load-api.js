@@ -10,8 +10,7 @@ function loadApiItem(){
 //    Hide current showing snippet demonstrations then show this one
     $('.snippet-content').hide();
 
-//    $("#add-item-content").fadeToggle(300);
-//    "#load-api"
+    $("#load-api").fadeToggle(300);
 
     $.ajax({
         type: "GET",
@@ -26,8 +25,17 @@ function loadApiItem(){
             format: "json"
         },
         success: function(data){
+            data = data['users'];
             console.log(data);
-            $("#load-api").html(data);
+            for (var i = 0; i < 15; i ++){
+                $("#load-api table").append('<tr>' +
+                                                    '<td>' +  data[i].id  + '</td>' +
+                                                    '<td>' +  data[i].birth_year  + '</td>' +
+                                                    '<td>' +  data[i].color  + '</td>' +
+                                                    '<td>' +  data[i].height  + '</td>' +
+                                                    '<td>' +  data[i].weight + '</td>' +
+                                            '</tr>')
+            }
         },
         error: function(e){
 
